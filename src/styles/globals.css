@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-cyber-border;
+  }
+  body {
+    @apply bg-cyber-black text-gray-100;
+    background-image:
+      linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyber-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-aura-500;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-cyber-card/80 backdrop-blur-xl border border-cyber-border/50 shadow-lg;
+  }
+  .glass-panel-strong {
+    @apply bg-cyber-card/90 backdrop-blur-2xl border border-cyber-border/60 shadow-xl;
+  }
+  .glow-border {
+    @apply border border-aura-500/20 shadow-[0_0_15px_rgba(99,102,241,0.15)];
+  }
+  .neon-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-aura-400 to-cyber-glow;
+  }
+  .cyber-button {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300
+           bg-gradient-to-r from-aura-600 to-cyber-purple
+           hover:from-aura-500 hover:to-cyber-pink
+           shadow-lg shadow-aura-500/25 hover:shadow-aura-500/40
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .cyber-button-outline {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300
+           border border-aura-500/50 text-aura-400
+           hover:bg-aura-500/10 hover:border-aura-400
+           active:scale-95;
+  }
+  .input-cyber {
+    @apply w-full px-4 py-3 rounded-xl bg-cyber-dark/80 border border-cyber-border
+           text-gray-100 placeholder-gray-500
+           focus:outline-none focus:ring-2 focus:ring-aura-500/50 focus:border-aura-500
+           transition-all duration-300;
+  }
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+  .status-dot.online {
+    @apply bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.5)];
+  }
+  .status-dot.thinking {
+    @apply bg-yellow-400 animate-pulse shadow-[0_0_8px_rgba(250,204,21,0.5)];
+  }
+  .status-dot.offline {
+    @apply bg-gray-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-cyber-grid {
+    background-image:
+      linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
